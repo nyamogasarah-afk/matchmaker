@@ -1,0 +1,33 @@
+
+*{box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#8B5CF6,#4C1D95);overflow:hidden;padding:20px}
+.hearts-bg{position:fixed;inset:0;pointer-events:none}
+.hearts-bg span{position:absolute;font-size:26px;animation:float 6s infinite ease-in-out;opacity:.8}
+.hearts-bg span:nth-child(1){left:10%;top:20%} .hearts-bg span:nth-child(2){left:80%;top:15%;animation-delay:1s}
+.hearts-bg span:nth-child(3){left:20%;top:80%;animation-delay:2s} .hearts-bg span:nth-child(4){left:90%;top:70%;animation-delay:.5s}
+.hearts-bg span:nth-child(5){left:50%;top:10%;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-25px) rotate(15deg)}}
+.heart-card{position:relative;width:90vw;max-width:680px;height:700px;background:white;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 30px 60px rgba(0,0,0,.4));clip-path:path("M 340 660 C 340 660 20 390 20 220 C 20 70 140 15 260 15 C 320 15 340 95 340 95 C 340 95 360 15 420 15 C 540 15 660 70 660 220 C 660 390 340 660 340 660 Z");animation:popIn .8s ease;transform:scale(1.15)}
+@keyframes popIn{0%{transform:scale(.2);opacity:0}100%{transform:scale(1.15);opacity:1}}
+.content{width:70%;text-align:center;margin-top:-10px}
+h1{color:#6D28D9;font-size:38px;margin:0;font-weight:900}
+.tag{color:#A78BFA;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:8px 0 25px}
+.inputs{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.input-wrap{position:relative;width:100%}
+.emoji-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:16px;z-index:2}
+.inputs input{width:100%;padding:16px 12px 16px 36px;border:2px solid #DDD6FE;border-radius:30px;outline:none;text-align:center;font-size:15px;font-weight:700;color:#4C1D95;background:#F5F3FF;transition:.3s}
+.inputs input:focus{border-color:#7C3AED;background:white;transform:scale(1.05)}
+.plus{color:#7C3AED;font-weight:900;font-size:22px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+button{width:100%;padding:16px;background:linear-gradient(135deg,#7C3AED,#6D28D9);color:white;border:none;border-radius:30px;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 10px 25px rgba(109,40,217,.45);transition:.3s}
+button:hover{transform:translateY(-3px) scale(1.04)}
+.error{color:#E11D48;font-size:13px;margin-top:12px;font-weight:600;display:none;background:#FFF1F2;padding:10px;border-radius:20px}
+#result{margin-top:18px;display:none}
+.result-heart{background:linear-gradient(135deg,#F5F3FF,#EDE9FE);border:2px dashed #A78BFA;border-radius:22px;padding:15px 10px;animation:heartBeat .8s ease}
+@keyframes heartBeat{0%{transform:scale(.2)}50%{transform:scale(1.25)}100%{transform:scale(1)}}
+#score{font-size:48px;margin:0;color:#6D28D9;font-weight:900}
+#message{margin:6px 0 0;color:#4C1D95;font-size:14px;font-weight:700}
+.emoji-burst{font-size:18px;letter-spacing:3px;animation:bounce 1s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.footer{margin-top:18px;font-size:11px;color:#A78BFA;font-weight:600;letter-spacing:1px}
+@media(max-width:600px){.heart-card{max-width:380px;height:600px;transform:scale(1);clip-path:path("M 190 560 C 190 560 10 320 10 170 C 10 50 90 10 150 10 C 185 10 190 60 190 60 C 190 60 195 10 230 10 C 290 10 370 50 370 170 C 370 320 190 560 190 560 Z")}.content{width:80%} h1{font-size:30px}}
